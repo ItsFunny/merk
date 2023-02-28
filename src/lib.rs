@@ -1,5 +1,3 @@
-#![feature(trivial_bounds)]
-
 #[global_allocator]
 #[cfg(feature = "jemallocator")]
 static ALLOC: jemallocator::Jemalloc = jemallocator::Jemalloc;

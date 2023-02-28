@@ -35,8 +35,9 @@ version = "0.1.8"
 optional = true
 
 [dependencies.ed]
-version = "0.3.0"
+version = "0.2.2"
 optional = true
+#git="https://github.com/ItsFunny/ed.git"
 
 [dependencies.rand]
 version = "0.8.5"
