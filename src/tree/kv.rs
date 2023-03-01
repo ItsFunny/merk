@@ -1,5 +1,5 @@
 use super::hash::{kv_hash, Hash, Hasher, HASH_LENGTH, NULL_HASH};
-use ed::{Decode, Encode, Result};
+use ed::{Decode, Encode, Result, Terminated};
 use std::{
     io::{Read, Write},
     num::TryFromIntError,
@@ -16,7 +16,9 @@ pub struct KV {
     pub(super) value: Vec<u8>,
     pub(super) hash: Hash,
 }
+impl Terminated for KV{
 
+}
 impl KV {
     /// Creates a new `KV` with the given key and value and computes its hash.
     #[inline]

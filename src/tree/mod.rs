@@ -12,7 +12,7 @@ mod walk;
 
 use std::cmp::max;
 
-use ed::{Decode, Encode};
+use ed::{Decode, Encode, Terminated};
 
 use super::error::Result;
 pub use commit::{Commit, NoopCommit};
@@ -32,7 +32,9 @@ pub struct TreeInner {
     right: Option<Link>,
     kv: KV,
 }
+impl Terminated for Box<TreeInner>{
 
+}
 /// A binary AVL tree data structure, with Merkle hashes.
 ///
 /// Trees' inner fields are stored on the heap so that nodes can recursively
